@@ -26,7 +26,10 @@
 	#其中删除文件可以由 git rm <filename>代替。
 
 > 在仓库中添加一个abc.txt文件，其内容为：
->>
+>> git is a distributed version control system.
+>> git is free software distributed under the GPL.
+>> git has a mutable index called stage.
+>> git tracks changes of files.
 
 
 
