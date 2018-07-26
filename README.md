@@ -40,14 +40,17 @@ git版本库里存了很多东西，其中最重要的就是称为stage的暂存
 	#3.创建本地仓库
 	git init
 
-### 1.2添加文件，修改文件，删除文件
+### 1.2修改文件（添加，修改，删除）
 
 添加文件，修改文件，删除文件中均需要2步操作：
 
+	#可以一次add多个文件（夹），只需空格分开它们
 	git add <filename>
 	git commit -m "operation notice"
 
 	#其中删除文件可以由 git rm <filename>代替。
+
+
 
 > 在仓库中添加一个abc.txt文件，其内容为：
 >> git is a distributed version control system.
@@ -66,4 +69,14 @@ git版本库里存了很多东西，其中最重要的就是称为stage的暂存
 	#添加文件到版本库
 	git commit -m "add abc.txt"
 
+### 撤销修改
+
+假设在abc.txt 最后添加了如下修改：fankeke is a hansome man.
+
+现在要撤销以上修改。
+
+撤销修改的几种情况：
+1. 修改的文件还在工作区，并未提交的暂存区：git checkout -- abc.txt ,结果是使得文件回到最近一次commit或add状态。
+2. 修改已通过git add提交到暂存区:
+3. 修改已通过git commit提交到版本库
 
