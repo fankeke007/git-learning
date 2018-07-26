@@ -7,14 +7,23 @@
 
 要想理解git的一整套运行原理得先了解相关术语，理解相关术语后能更好的促进我们理解git的工作流。
 
-![工作区、暂存区、版本库三者之间关系](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384907702917346729e9afbf4127b6dfbae9207af016000/0)
+![工作区、暂存区、版本库三者之间关系](https://raw.githubusercontent.com/fankeke007/git-learning/master/imgs/0.jpg)
 
-### 工作区
+### 工作区（Working Directory）
 
+在电脑能看到的目录，在这里做的修改若不通过以下2步，是不会对版本库有影响的。
+- git add（将修改添加到暂存区）；
+- git commit（将修改添加到版本库）。
 
-### 暂存区
+### 暂存区（Stage）
 
-### 版本库
+git版本库中的称为stage（或index）的区域。当变动通过git add 后，变动的内容就存放到了暂存区（此时还未到正式版本库，通过git commit之后才正式到版本库形成一个新的版本）。
+
+### 版本库（Repository）
+
+工作区有一个隐藏的目录.git，这个不算工作区，而是git的版本库。
+
+git版本库里存了很多东西，其中最重要的就是称为stage的暂存区和git为我们自动创建的第一个master分支，以及指向master分支的一个指针HEAD。
 
 ## 1.命令行操作
 
