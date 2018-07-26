@@ -1,6 +1,21 @@
 # git-learning
 深入git常用操作
 
+参考：[git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
+## 术语
+
+要想理解git的一整套运行原理得先了解相关术语，理解相关术语后能更好的促进我们理解git的工作流。
+
+![工作区、暂存区、版本库三者之间关系](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384907702917346729e9afbf4127b6dfbae9207af016000/0)
+
+### 工作区
+
+
+### 暂存区
+
+### 版本库
+
 ## 1.命令行操作
 
 > 情景案例：先在本地创建git仓库，后期在线上github（远程）创建同名git仓库，然后将本地git仓库与远程关联。
