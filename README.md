@@ -20,10 +20,10 @@
 
 添加文件，修改文件，删除文件中均需要2步操作：
 
-- git add <filename>
-- git commit -m "operation notice"
+	git add <filename>
+	git commit -m "operation notice"
 
-其中删除文件可以由==git rm <filename> ==代替。
+	#其中删除文件可以由 git rm <filename>代替。
 
 > 在仓库中添加一个abc.txt文件，其内容为：
 >>
