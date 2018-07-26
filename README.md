@@ -44,14 +44,20 @@ git版本库里存了很多东西，其中最重要的就是称为stage的暂存
 
 	git reset --hard[/soft/mixed] HEAD~xx[/HEAD@{xx}/commitId]
 
-reset hard、soft、mixed 3个参数的区别：
+reset命令 hard、soft、mixed 3个参数的区别：
 - mixed：是reset 命令的默认参数，会将版本库、stage回退到指定的commit版本，但是**这期间的修改保留在工作区**
 - hard：将版本库，stage，工作区全都回退到指定版本，这会丢失stage、工作区中的修改
 - soft：将版本库回退到指定版本，这期间（回退的两个版本之间）的变更都在stage中
 
+版本参数的3中形式：
+
+- HEAD~2：上两个版本
+- HEAD@{3}：git reflog中显示的版本信息
+- commitId : log 中显示的具体版本id （不需要写全，只需前几位，git会自动去匹配）
+
 三者的区别见下图（参考：[git reset soft,hard,mixed之区别深解](https://www.cnblogs.com/kidsitcn/p/4513297.html)）
 
-![reset mixed /hard /soft 三个参数的区别](https://raw.githubusercontent.com/fankeke007/git-learning/master/imgs/reest-params.jpg)
+![reset mixed /hard /soft 三个参数的区别](https://raw.githubusercontent.com/fankeke007/git-learning/master/imgs/reset-params.jpg)
 
 
 ## 1.命令行操作
