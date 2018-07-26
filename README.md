@@ -32,5 +32,11 @@
 >> git tracks changes of files.
 
 
+	#创建文件abc.txt
+	type nul>abx.txt
+	#添加文件到暂存区
+	git add abc.txt
+	#添加文件到版本库
+	git commit -m "add abc.txt"
 
 
