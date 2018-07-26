@@ -157,7 +157,20 @@ reset命令 hard、soft、mixed 3个参数的区别：
 	#若当前分支与多个主机分支存在追踪关系，则可以使用-u参数指定默认主机，这样以后就可以不加任何参数使用git push
 	git push -u origin master
 
-不带任何
+	#不管是否存在对应分支，将本地所有分支都推送到远程origin主机上
+	git push --all origin
+
+	#强行推送
+	git push --force origin
+
+	#推送标签（tag）
+	git push origin --tags
+
+
+
+不带任何参数的git push ，默认只推送当前分支，这叫做**simple**方式。此外还有一种**matching**方式，会推送所有对应的远程分支的本地分支。git2.0之前默认matching，现在改为默认simple。若需修改这个设置，可以采用git config 命令：
+
+	git config --global push.default matching
 
 
 
