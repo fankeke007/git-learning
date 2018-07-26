@@ -116,7 +116,7 @@ reset命令 hard、soft、mixed 3个参数的区别：
 2. 修改已通过git add提交到暂存区: git reset HEAD abc.txt，丢弃提交到暂存区的修改，该操作会**把修改回退到工作区**，然后执行第一种情况的操作，即可以彻底撤销修改。
 3. 修改已通过git commit提交到版本库：（若还没提交到远程仓库）回退版本即可（若已提价到远程仓库，即使回退版本也会留下记录）。
 
-撤销删除：
+**撤销删除**：
 1. 在工作区删除，未将修改提交到暂存区：git checkout -- abc.txt
 2. 删除（修改）已(git add/git rm)提交到暂存区:
 	- git reset HEAD abc.txt
@@ -127,9 +127,28 @@ reset命令 hard、soft、mixed 3个参数的区别：
 
 在github,码云，gitlab或其他类似平台，按步骤操作即可(一般最好与本地仓库保持名称一致)。
 
-### 链接本地仓库与远程仓库
+### 联结本地仓库与远程仓库
 
 语法：git remote add [shorname] [url]
 - shortname:可以指定一个远程仓库的名字，以便将来使用
 - url ：远程仓库的地址
+
+	#和远程仓库建立联结
 	git remote add origin git@github.com:fankeke007/git-learning.git
+
+### 推送数据到远程仓库
+语法：git push [remote-name] [branch name]
+将本地master分支推送到origin服务器上
+
+	git push origin master
+
+若在推送数据前已经有其他人推送了若干更新，则push会失败，会给出相应的操作提示。根据提示进行相应的操作即可。
+
+### 获取远程仓库数据并与本地指定分支合并
+
+语法:git pull [options] [\<repository\> [\<refspec\>...]]
+
+
+
+
+
