@@ -25,6 +25,35 @@ git版本库中的称为stage（或index）的区域。当变动通过git add �
 
 git版本库里存了很多东西，其中最重要的就是称为stage的暂存区和git为我们自动创建的第一个master分支，以及指向master分支的一个指针HEAD。
 
+## 常用命令工具
+
+### 查看状态（git status）
+
+可以查看工作区，暂存区当前状态，会给出相应的提示操作。(是否有修改需要提交到暂存区，是否有暂存区需要提交到版本库)
+
+	git status
+
+### 查看历史版本（git log / git reflog）
+
+	# 查看历史版本，但是回退后无法看到后面的版本
+	git log
+	#查看历史版本（所有，不管是否有回退）
+	git reflog
+
+### 版本回退
+
+	git reset --hard[/soft/mixed] HEAD~xx[/HEAD@{xx}/commitId]
+
+reset hard、soft、mixed 3个参数的区别：
+- mixed：是reset 命令的默认参数，会将版本库、stage回退到指定的commit版本，但是**这期间的修改保留在工作区**
+- hard：将版本库，stage，工作区全都回退到指定版本，这会丢失stage、工作区中的修改
+- soft：将版本库回退到指定版本，这期间（回退的两个版本之间）的变更都在stage中
+
+三者的区别见下图（参考：[git reset soft,hard,mixed之区别深解](https://www.cnblogs.com/kidsitcn/p/4513297.html)）
+
+![reset mixed /hard /soft 三个参数的区别](https://raw.githubusercontent.com/fankeke007/git-learning/master/imgs/reest-params.jpg)
+
+
 ## 1.命令行操作
 
 > 情景案例：先在本地创建git仓库，后期在线上github（远程）创建同名git仓库，然后将本地git仓库与远程关联。
@@ -75,7 +104,7 @@ git版本库里存了很多东西，其中最重要的就是称为stage的暂存
 
 现在要撤销以上修改。
 
-撤销修改的几种情况：
+撤销修改的3种情况：
 1. 修改的文件还在工作区，并未提交的暂存区：git checkout -- abc.txt ，结果是放弃工作区当前修改，使得文件回到最近一次commit或add状态。
 2. 修改已通过git add提交到暂存区: git reset HEAD abc.txt，丢弃提交到暂存区的修改，该操作会**把修改回退到工作区**，然后执行第一种情况的操作，即可以彻底撤销修改。
 3. 修改已通过git commit提交到版本库：（若还没提交到远程仓库）回退版本即可（若已提价到远程仓库，即使回退版本也会留下记录）。
