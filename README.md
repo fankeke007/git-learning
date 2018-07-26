@@ -1,7 +1,10 @@
 # git-learning
 深入git常用操作
 
-参考：[git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+参考：
+[git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+[git](https://git-scm.com/book/zh/v1/)
+
 
 ## 术语
 
@@ -104,14 +107,29 @@ reset命令 hard、soft、mixed 3个参数的区别：
 	#添加文件到版本库
 	git commit -m "add abc.txt"
 
-### 1.3撤销修改
+### 1.3撤销修改（删除）
 
-假设在abc.txt 最后添加了如下修改：fankeke is a hansome man.
+假设在abc.txt 最后添加了如下修改：fankeke is a hansome man.现在要撤销以上修改。
 
-现在要撤销以上修改。
-
-撤销修改的3种情况：
+**撤销修改的3种情况：**
 1. 修改的文件还在工作区，并未提交的暂存区：git checkout -- abc.txt ，结果是放弃工作区当前修改，使得文件回到最近一次commit或add状态。
 2. 修改已通过git add提交到暂存区: git reset HEAD abc.txt，丢弃提交到暂存区的修改，该操作会**把修改回退到工作区**，然后执行第一种情况的操作，即可以彻底撤销修改。
 3. 修改已通过git commit提交到版本库：（若还没提交到远程仓库）回退版本即可（若已提价到远程仓库，即使回退版本也会留下记录）。
 
+撤销删除：
+1. 在工作区删除，未将修改提交到暂存区：git checkout -- abc.txt
+2. 删除（修改）已(git add/git rm)提交到暂存区:
+	- git reset HEAD abc.txt
+	- git checkout -- abc.txt
+3. 删除已提交到版本库：回滚版本库即可
+
+### 建立远程仓库
+
+在github,码云，gitlab或其他类似平台，按步骤操作即可(一般最好与本地仓库保持名称一致)。
+
+### 链接本地仓库与远程仓库
+
+语法：git remote add [shorname] [url]
+- shortname:可以指定一个远程仓库的名字，以便将来使用
+- url ：远程仓库的地址
+	git remote add origin git@github.com:fankeke007/git-learning.git
