@@ -136,19 +136,51 @@ reset命令 hard、soft、mixed 3个参数的区别：
 	#和远程仓库建立联结
 	git remote add origin git@github.com:fankeke007/git-learning.git
 
-### 推送数据到远程仓库
-语法：git push [remote-name] [branch name]
-将本地master分支推送到origin服务器上
+### 推送数据到远程仓库（git push）
+语法：git push \<远程主机名\> \<本地分支\>:\<远程分支\>
 
+	#将本地master分支推送到origin服务器的master分支，若master不存在会新建
 	git push origin master
+
+	#若省略本地分支名，则表示删除指定的远程分支(删除远程master分支)
+	git push origin :master
+	#等同于
+	git push origin --delete master
+
+	#若当前分支与远程分支间存在追踪关系，则本地分支与远程分支都可以省略
+	# 将当前分支推送到远程对应分支
+	git push origin
+
+	#若当前分支只有一个追踪分支，那么主机名也可以省略
+	git push
+
+	#若当前分支与多个主机分支存在追踪关系，则可以使用-u参数指定默认主机，这样以后就可以不加任何参数使用git push
+	git push -u origin master
+
+不带任何
+
+
+
 
 若在推送数据前已经有其他人推送了若干更新，则push会失败，会给出相应的操作提示。根据提示进行相应的操作即可。
 
-### 获取远程仓库数据并与本地指定分支合并
+### 获取远程仓库数据并与本地指定分支合并 (git pull)
 
 语法:git pull [options] [\<repository\> [\<refspec\>...]]
 
+	#取回origin主机的next分支，与本地master分支合并
+	git pull origin next：master
 
+	#取回origin主机的next分支，并与当前分支合并，则可以省略冒号及后面内容
+	git pull origin next
+
+
+在某些场合，Git会自动在本地分支与远程分支之间，建立一种追踪关系(tracking)。比如，在git clone的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的master分支自动”追踪”origin/master分支。若当前分支与远程分支存在追踪关系，git pull 就可以省略远程分支名。
+
+git 允许手动建立追踪关系：
+
+	#指定master分支追踪origin/next 分支
+	git branch --set-upstream master origin/next
 
 
 
