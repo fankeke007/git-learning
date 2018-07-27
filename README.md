@@ -312,16 +312,21 @@ reset命令 hard、soft、mixed 3个参数的区别：
 
 参考：<br/>
 [git-merge 完全解析](https://www.jianshu.com/p/58a166f24c81)<br/>
-[一个成功的git分支模型](https://www.jianshu.com/p/b357df6794e3)<br/>
-[git flow](https://www.ibm.com/developerworks/cn/java/j-lo-git-mange/index.html)
+[化解冲突：git merge 与 git rebase 中的 ours 和 theirs](https://bitmingw.github.io/2017/02/16/git-merge-rebase-ours-and-theirs/)<br/>
 
 ### rebase
 
-rebase:https://www.cnblogs.com/pinefantasy/articles/6287147.html
-rebase:https://www.jianshu.com/p/4a8f4af4e803
+rebase:https://www.cnblogs.com/pinefantasy/articles/6287147.html<br/>
+rebase:https://www.jianshu.com/p/4a8f4af4e803<br/>
+
+[化解冲突：git merge 与 git rebase 中的 ours 和 theirs](https://bitmingw.github.io/2017/02/16/git-merge-rebase-ours-and-theirs/)<br/>
+
+**merge VS rebase**
 
 ## 推荐的git flow
 
+[一个成功的git分支模型](https://www.jianshu.com/p/b357df6794e3)<br/>
+[git flow](https://www.ibm.com/developerworks/cn/java/j-lo-git-mange/index.html)
 
 
 
