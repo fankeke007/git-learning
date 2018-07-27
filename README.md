@@ -92,12 +92,9 @@ reset命令 hard、soft、mixed 3个参数的区别：
 
 
 > 在仓库中添加一个abc.txt文件，其内容为：
->> git is a distributed version control system.
-
->> git is free software distributed under the GPL.
-
->> git has a mutable index called stage.
-
+>> git is a distributed version control system.<br/>
+>> git is free software distributed under the GPL.<br/>
+>> git has a mutable index called stage.<br/>
 >> git tracks changes of files.
 
 
@@ -192,14 +189,55 @@ reset命令 hard、soft、mixed 3个参数的区别：
 	#若当前分支只有一个追踪分支（且当前分支与远程分支存在追踪关系），则远程主机名也可省略
 	git pull
 
->git pull = git fetch + git merge<br/>
->git pull --rebase = git fetch + git rebase
+>**git pull = git fetch + git merge**<br/>
+>**git pull --rebase = git fetch + git rebase**
 
 
 >在某些场合，Git会自动在本地分支与远程分支之间，建立一种追踪关系(tracking)。比如，在git clone的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的master分支自动”追踪”origin/master分支。若当前分支与远程分支存在追踪关系，git pull 就可以省略远程分支名。 git 允许手动建立追踪关系：
 
 	#指定master分支追踪origin/next 分支
 	git branch --set-upstream master origin/next
+
+### 1.8分支管理
+
+
+
+#### 1.8.1创建分支
+
+	#创建名为branch-1的分支
+	git branch branch-1
+
+#### 1.8.2切换分支
+
+	#切换到branch-1分支
+	git checkout branch-1
+
+>创建和切换分支可以有一行命令搞定:<br/>git checkout -b branch-1
+
+#### 1.8.3查看本地和远程分支
+
+	git branch -a
+
+#### 1.8.4修改分支名称
+
+	git branch -m branch-1 branch-11
+
+#### 1.8.5删除远程分支
+
+	git push origin --delete branch-1
+
+#### 1.8.6合并某个分支到当前分支（master）
+
+	git checkout master
+	git merge branch-11
+
+
+
+
+
+
+
+
 
 
 rebase:https://www.cnblogs.com/pinefantasy/articles/6287147.html
