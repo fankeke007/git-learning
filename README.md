@@ -192,7 +192,7 @@ reset命令 hard、soft、mixed 3个参数的区别：
 	#若当前分支只有一个追踪分支（且当前分支与远程分支存在追踪关系），则远程主机名也可省略
 	git pull
 
->git pull = git fetch + git merge
+>git pull = git fetch + git merge<br/>
 >git pull --rebase = git fetch + git rebase
 
 
