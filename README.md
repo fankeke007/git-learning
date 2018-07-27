@@ -63,6 +63,23 @@ reset命令 hard、soft、mixed 3个参数的区别：
 
 ![reset mixed /hard /soft 三个参数的区别](https://raw.githubusercontent.com/fankeke007/git-learning/master/imgs/reset-params.jpg)
 
+### 暂存工作现场（stash）
+
+>情景案例：在dev 分支，任务完成一半。突然需要切换到bug分支，解决bug。dev分支不想提交可以使用git stash将工作现场保存起来。而不印象其他分支的工作现场。
+
+	#保存工作现场
+	git stash
+	#查看所欲保存的工作现场
+	git stash list
+	#恢复工作现场1:恢复并删除
+	git stash pop
+	#恢复工作现场2：恢复但不删除
+	git stash apply stash@{0}
+	#删除stash
+	git stash drop
+
+
+
 
 ## 1.命令行操作
 
