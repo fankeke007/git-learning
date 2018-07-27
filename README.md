@@ -1,9 +1,9 @@
 # git-learning
 深入git常用操作
 
-参考：
-[git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
-[git](https://git-scm.com/book/zh/v1/)
+参考：<br/>
+[git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)<br/>
+[git](https://git-scm.com/book/zh/v1/)<br/>
 [git](https://www.yiibai.com/git/git_pull.html)
 
 
@@ -308,22 +308,29 @@ reset命令 hard、soft、mixed 3个参数的区别：
 
 
 
-### merge
+### 1.10冲突处理（merge）
 
-参考：
-[git-merge 完全解析](https://www.jianshu.com/p/58a166f24c81)
-[一个成功的git分支模型](https://www.jianshu.com/p/b357df6794e3)
+参考：<br/>
+[git-merge 完全解析](https://www.jianshu.com/p/58a166f24c81)<br/>
+[一个成功的git分支模型](https://www.jianshu.com/p/b357df6794e3)<br/>
+[git flow](https://www.ibm.com/developerworks/cn/java/j-lo-git-mange/index.html)
 
-
-
-
-
-
-
-
-
-
-
+### rebase
 
 rebase:https://www.cnblogs.com/pinefantasy/articles/6287147.html
 rebase:https://www.jianshu.com/p/4a8f4af4e803
+
+## 推荐的git flow
+
+
+
+
+
+
+
+
+
+
+
+
+
