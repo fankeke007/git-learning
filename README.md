@@ -216,7 +216,13 @@ reset命令 hard、soft、mixed 3个参数的区别：
 
 #### 1.8.3查看本地和远程分支
 
+	#本地+远程
 	git branch -a
+	#远程
+	git branch -r
+	#本地
+	git branch [--list]
+
 
 #### 1.8.4修改分支名称
 
@@ -225,11 +231,40 @@ reset命令 hard、soft、mixed 3个参数的区别：
 #### 1.8.5删除远程分支
 
 	git push origin --delete branch-1
+	#or
+	git push origin :branch-1
 
 #### 1.8.6合并某个分支到当前分支（master）
 
 	git checkout master
 	git merge branch-11
+
+#### 1.8.7删除分支
+
+	# 若 branch-11 还未merge，则会失败，需用-D强行删除
+	git branch -d branch-11
+
+#### 1.8.8建立本地与远程分支映射关系
+
+	#完整写法
+	git branch --set-upstream-to=origin/branchName  localBranchName
+	#若是当前分支与远程分支映射，可简写
+	git branch --set-upstream-to origin/branchName
+
+	#撤销本地分支与远程分支的联系
+	git branch --unset-upstream
+
+#### 1.8.9查看本地与远程分支建的映射关系
+
+	git branch -vv
+
+### merge
+
+参考：
+[git-merge 完全解析](https://www.jianshu.com/p/58a166f24c81)
+[一个成功的git分支模型](https://www.jianshu.com/p/b357df6794e3)
+
+
 
 
 
