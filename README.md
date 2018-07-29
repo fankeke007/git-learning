@@ -145,6 +145,7 @@ reset命令 hard、soft、mixed 3个参数的区别：
 ### 1.5联结本地仓库与远程仓库
 
 语法：git remote add [shorname] [url]
+
 - shortname:可以指定一个远程仓库的名字，以便将来使用
 - url ：远程仓库的地址
 
