@@ -149,8 +149,11 @@ reset命令 hard、soft、mixed 3个参数的区别：
 - shortname:可以指定一个远程仓库的名字，以便将来使用
 - url ：远程仓库的地址
 
-	#和远程仓库建立联结
-	git remote add origin git@github.com:fankeke007/git-learning.git
+
+```
+#和远程仓库建立联结
+git remote add origin git@github.com:fankeke007/git-learning.git
+```
 
 
 ### 1.6推送数据到远程仓库（git push）
